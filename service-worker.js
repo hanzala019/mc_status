@@ -3,7 +3,8 @@ const CACHE_NAME = "static";
 
 // Files to cache
 const urlsToCache = [
-    "https://hanzala019.github.io/mc_status/",
+    "https://hanzala019.github.io/mc_status/index.html",
+    "https://hanzala019.github.io/mc_status/offline.html",
     "https://hanzala019.github.io/mc_status/static/icons/icon-256.png",
     "https://hanzala019.github.io/mc_status/static/icons/icon-512.png",
     "https://hanzala019.github.io/mc_status/static/screenshots/Screenshot-wide.png",
