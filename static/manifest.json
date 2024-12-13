@@ -1,0 +1,35 @@
+{
+    "name": "Ocms",
+    "short_name": "Ocms ERP",
+    "start_url": "/",
+    "background_color": "#333333",
+    "theme_color": "#009579",
+    "display":"standalone",
+    "icons":[
+    {
+        "src": "../static/icons/icon-256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    },
+    {
+        "src": "../static/icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+    ],
+    "screenshots": [
+        {
+            "src": "/static/screenshots/Screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/static/screenshots/Screenshot-narrow.png",
+            "sizes": "720x1280",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+   
+    ]
+}
