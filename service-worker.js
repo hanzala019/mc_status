@@ -3,11 +3,11 @@ const CACHE_NAME = "static";
 
 // Files to cache
 const urlsToCache = [
-    "/",
-    "/static/icons/icon-256.png",
-    "/static/icons/icon-512.png",
-    "/static/screenshots/Screenshot-wide.png",
-    "/static/screenshots/Screenshot-narrow.png"
+    "https://hanzala019.github.io/mc_status/",
+    "https://hanzala019.github.io/mc_status/static/icons/icon-256.png",
+    "https://hanzala019.github.io/mc_status/static/icons/icon-512.png",
+    "https://hanzala019.github.io/mc_status/static/screenshots/Screenshot-wide.png",
+    "https://hanzala019.github.io/mc_status/static/screenshots/Screenshot-narrow.png"
 ];
 
 // Install the service worker
@@ -34,8 +34,8 @@ self.addEventListener("push", event => {
         console.log("payload: ",payload)
         self.registration.showNotification(payload.title, {
             body: payload.body,
-            icon:"/static/icons/icon-512.png",
-            badge:"/static/icons/icon-256.png"
+            icon:"https://hanzala019.github.io/mc_status/static/icons/icon-512.png",
+            badge:"https://hanzala019.github.io/mc_status/static/icons/icon-256.png"
             
         });
     } else {
