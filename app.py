@@ -23,10 +23,10 @@ VAPID_CLAIMS = {
 # user = "root"     # Your database username
 # password = "" # Your database password
 # database = "ocms-knit-mc" # Your database name
-print(os.getenv("HOST"))
-print(os.getenv("USER"))
-print(os.getenv("PASSWORD"))
-print(os.getenv("DB"))
+# print(os.getenv("HOST"))
+# print(os.getenv("USER"))
+# print(os.getenv("PASSWORD"))
+# print(os.getenv("DB"))
 try:
     # Establish connection
     connection = pymysql.connect(
