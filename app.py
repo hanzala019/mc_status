@@ -8,28 +8,34 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 from pywebpush import webpush, WebPushException
 import json
+from dotenv import load_dotenv
+import os
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-VAPID_PRIVATE_KEY = "9yn6zCjO658_v2aE2iIQ_ZhwjmHE95np2FECaTXOTZ8"
-VAPID_PUBLIC_KEY = "BK9aUMcGay5K18U0I1kNfy18cnrO5j1R22GJ3XiTANUgWgwAxd96pT-ysHVtSxki7A3vrDoYiCHeXx4FjGdiXhU"
+VAPID_PRIVATE_KEY = os.getenv("VAPID_PRIVATE_KEY")
+VAPID_PUBLIC_KEY =os.getenv("VAPID_PUBLIC_KEY")
 VAPID_CLAIMS = {
-        "sub": "mailto: hanzalaomar1@gmail.com"
+        "sub": os.getenv("VAPID_CLAIMS")
     }
-host = "localhost"         # Database host
-user = "root"     # Your database username
-password = "" # Your database password
-database = "ocms-knit-mc" # Your database name
-
+# host = "localhost"         # Database host
+# user = "root"     # Your database username
+# password = "" # Your database password
+# database = "ocms-knit-mc" # Your database name
+print(os.getenv("HOST"))
+print(os.getenv("USER"))
+print(os.getenv("PASSWORD"))
+print(os.getenv("DB"))
 try:
     # Establish connection
     connection = pymysql.connect(
         charset="utf8mb4",
         connect_timeout=10,
-        host=host,
-        user=user,
-        password=password,
-        database=database,
+        host=os.getenv("HOST"),
+        user=os.getenv("USER"),
+        password=os.getenv("PASSWORD"),
+        database=os.getenv("DB"),
        
     )
     print("Connected to the database!")
@@ -117,5 +123,5 @@ def send_notification_to_subscription(subscription_info, payload):
 
 
 if __name__ == '__main__':
-      # Use PORT from environment or default to 5000
-    app.run(host="0.0.0.0", port=3000)
+    port = int(os.getenv("PORT", 5000))  # Use PORT from environment or default to 5000
+    app.run(host="0.0.0.0", port=port)
