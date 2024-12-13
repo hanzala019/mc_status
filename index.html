@@ -24,7 +24,7 @@
 let results = []
 const list = document.querySelector(".list")
     if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("https://hanzala019.github.io/mc_status/service-worker.js").then(r=>{
+    navigator.serviceWorker.register("./service-worker.js").then(r=>{
         console.log("Service worker registered")
         console.log(r)
     })
@@ -51,7 +51,7 @@ window.addEventListener('online', () => {
     body: 'You are back online! All features are available.',
 
   });
-  fetch("mc-status-ha5p.onrender.com/api/mc-cause").then(res=> res.json())
+  fetch("https://mc-status-ha5p.onrender.com/api/mc-cause").then(res=> res.json())
 .then(data => {
     // console.log(data)
     results.push(data.result)
@@ -94,7 +94,7 @@ async function subscribeToPush() {
    
 
     // Send subscription details to your backend
-    await fetch('mc-status-ha5p.onrender.com/subscribe', {
+    await fetch('https://mc-status-ha5p.onrender.com/subscribe', {
         method: 'POST',
         body: JSON.stringify(existingSubscription),
         headers: { 'Content-Type': 'application/json' },
@@ -102,7 +102,7 @@ async function subscribeToPush() {
 }
 
 function sendNotification() {
-    fetch('mc-status-ha5p.onrender.com/send_notification', {
+    fetch('https://mc-status-ha5p.onrender.com/send_notification', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

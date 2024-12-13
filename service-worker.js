@@ -3,12 +3,12 @@ const CACHE_NAME = "static";
 
 // Files to cache
 const urlsToCache = [
-    "https://hanzala019.github.io/mc_status/index.html",
-    "https://hanzala019.github.io/mc_status/offline.html",
-    "https://hanzala019.github.io/mc_status/static/icons/icon-256.png",
-    "https://hanzala019.github.io/mc_status/static/icons/icon-512.png",
-    "https://hanzala019.github.io/mc_status/static/screenshots/Screenshot-wide.png",
-    "https://hanzala019.github.io/mc_status/static/screenshots/Screenshot-narrow.png"
+    "./index.html",
+    "./offline.html",
+    "./static/icons/icon-256.png",
+    "./static/icons/icon-512.png",
+    "./static/screenshots/Screenshot-wide.png",
+    "./static/screenshots/Screenshot-narrow.png"
 ];
 
 // Install the service worker
