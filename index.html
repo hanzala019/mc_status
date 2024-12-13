@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#009579">
     <!-- <title>Document</title> -->
-    <link rel="manifest" href="https://hanzala019.github.io/mc_status/static/manifest.json">
-    <link rel="shortcut icon" href="https://hanzala019.github.io/mc_status/static/icons/icon-256.png">
+    <link rel="manifest" href="./static/manifest.json">
+    <link rel="shortcut icon" href="./static/icons/icon-256.png">
 </head>
 <body style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;">
-    <a href="https://hanzala019.github.io/mc_status/offline.html">Offline</a>
+    <a href="./offline.html">Offline</a>
     <h1>List of Causes of Failure</h1>
     <ul class="list">
         <button id="subscribe-btn">Subscribe to Notifications</button>
@@ -51,7 +51,7 @@ window.addEventListener('online', () => {
     body: 'You are back online! All features are available.',
 
   });
-  fetch("https://mc-status-ha5p.onrender.com/api/mc-cause").then(res=> res.json())
+  fetch("mc-status-ha5p.onrender.com/api/mc-cause").then(res=> res.json())
 .then(data => {
     // console.log(data)
     results.push(data.result)
@@ -94,7 +94,7 @@ async function subscribeToPush() {
    
 
     // Send subscription details to your backend
-    await fetch('https://mc-status-ha5p.onrender.com/subscribe', {
+    await fetch('mc-status-ha5p.onrender.com/subscribe', {
         method: 'POST',
         body: JSON.stringify(existingSubscription),
         headers: { 'Content-Type': 'application/json' },
@@ -102,7 +102,7 @@ async function subscribeToPush() {
 }
 
 function sendNotification() {
-    fetch('https://mc-status-ha5p.onrender.com/send_notification', {
+    fetch('mc-status-ha5p.onrender.com/send_notification', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ document.getElementById('subscribe-btn').addEventListener('click', async () => {
              subscribeToPush();
             
            
-            alert('Subscribed to notifications!');
+            
         } catch (error) {
             console.error('Subscription failed:', error);
         }
